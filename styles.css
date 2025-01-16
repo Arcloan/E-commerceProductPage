@@ -8,3 +8,10 @@
         src: url("./Kumbh_Sans/KumbhSans-VariableFont_YOPQ\,wght.ttf");
     }
 }
+
+@layer components {
+    [popover]::backdrop {
+        background-color: hsl(240, 100%, 5%, 0.8);
+        opacity: 0.3;
+    }
+}
