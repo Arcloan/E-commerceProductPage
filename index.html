@@ -38,17 +38,23 @@
           </ul>
         </nav>
       </div>
-      <div class="flex items-center justify-end gap-4 lg:gap-8">
-        <button aria-label="Cart" class="relative">
+      <div class="flex items-center justify-end gap-4 lg:gap-8 cursor-pointer">
+        <div tabindex="0" aria-label="Cart" class="relative cartToggle">
           <img src="images/icon-cart.svg" alt="Cart" />
-          <div class="hidden flex-col gap-4 cart absolute top-12 -left-12 -translate-x-[50%] shadow-2xl w-[340px] h-[260px] bg-white rounded-md p-6 z-[1] lg:data-[expanded]:flex">
+          <div class="hidden cursor-auto flex-col gap-4 cart absolute top-12 -left-12 -translate-x-[50%] shadow-2xl w-[340px] h-[260px] bg-white rounded-md p-6 z-[1] lg:data-[expanded]:flex">
           <h2 class="font-semibold self-start">Cart</h2>
           <hr>
-          <div class="cartContent grid h-full w-full place-content-center">
-            <p class="font-semibold text-darkGrayshBlue">Your cart is empty</p>
+          <div class="cartContent grid gap-4 h-full w-full place-content-center">
+            <p data-active="" class="hidden data-[active]:block font-semibold text-darkGrayshBlue">Your cart is empty</p>
+            <div class="hidden mx-auto data-[active]:flex gap-2 items-center">
+              <img src="./images/image-product-1-thumbnail.jpg" class="rounded-md h-12 w-12 object-cover" alt="">
+              <p>Fall Limited Edition Sneakers $125.00 x <span class="quantityAdded"></span><span class="totalCost font-bold"></span></p>
+              <img src="images/icon-delete.svg" class="w-4 h-4 deleteCart cursor-pointer" alt="">
+            </div>
+            <button class="hidden data-[active]:block bg-orange p-3 font-semibold rounded-md">Checkout</button>
           </div>
         </div>
-        </button>
+      </div>
         <img
           src="images/image-avatar.png"
           alt=""
@@ -79,6 +85,7 @@
     <main class="mx-auto grid-cols-2 gap-8 lg:mt-16 lg:grid lg:max-w-[80%]">
       <div class="galleryDesktop flex flex-col gap-8 max-lg:hidden">
         <img
+          tabindex="0"
           src="./images/image-product-1.jpg"
           alt=""
           class="lightboxToggle h-[60vh] rounded-lg object-cover"
@@ -149,11 +156,17 @@
       </div>
       <div class="galleryMobile relative lg:hidden">
         <img src="images/image-product-1.jpg" alt="A beatiful pair of shoes" class="productImage"/>
-        <div class="cart hidden flex-col gap-4 absolute inset-0 top-4 max-w-[95%] bottom-8 bg-white mx-auto rounded-md p-6 z-[1] data-[expanded]:flex">
+        <div class="cursor-auto cart hidden flex-col gap-4 absolute inset-0 top-4 max-w-[95%] bottom-16 bg-white mx-auto rounded-md p-6 z-[1] data-[expanded]:flex">
           <h2 class="font-semibold">Cart</h2>
           <hr>
-          <div class="cartContent grid h-full w-full place-content-center">
-            <p class="font-semibold text-darkGrayshBlue">Your cart is empty</p>
+          <div class="cartContent grid gap-4 h-full w-full place-content-center">
+            <p data-active class="hidden data-[active]:block font-semibold text-darkGrayshBlue">Your cart is empty</p>
+            <div class="mx-auto gap-2 items-center data-[active]:flex hidden">
+              <img src="./images/image-product-1-thumbnail.jpg" class="rounded-md h-16 w-16 object-cover" alt="">
+              <p>Fall Limited Edition Sneakers $125.00 x <span class="quantityAdded"></span><span class="totalCost font-bold"></span></p>
+              <img src="images/icon-delete.svg" class="w-6 h-6 deleteCart cursor-pointer" alt="">
+            </div>
+            <button class="bg-orange p-3 font-semibold rounded-md hidden data-[active]:block">Checkout</button>
           </div>
         </div>
         <button
@@ -202,11 +215,11 @@
           <div
             class="quantity flex items-center rounded-md bg-lightGrayshBlue p-4 lg:flex-1"
           >
-            <button aria-label="Minus">
+            <button aria-label="Minus" class="Minus">
               <img src="./images/icon-minus.svg" alt="Minus" />
             </button>
-            <span class="currentQuantity mx-auto font-semibold">0</span>
-            <button aria-label="Plus">
+            <span class="currentQuantityToAdd mx-auto font-semibold">0</span>
+            <button aria-label="Plus" class="Plus">
               <img src="./images/icon-plus.svg" alt="Plus" />
             </button>
           </div>

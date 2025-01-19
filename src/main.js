@@ -1,3 +1,5 @@
+import "./cart.js";
+
 const forms = document.querySelectorAll("form");
 forms.forEach(form => {
     if (form.method === "dialog") return;
@@ -6,7 +8,7 @@ forms.forEach(form => {
 
 document.querySelector(".lightboxToggle").addEventListener("click",e=>{
     document.querySelector("dialog").showModal();
-})
+});
 
 const indexes = {"first": 1, "second": 2, "third": 3, "fourth": 4,};
 const images = [document.querySelector(".lightbox"), document.querySelector(".lightboxToggle"), document.querySelector(".productImage")];
