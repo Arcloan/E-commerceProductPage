@@ -66,12 +66,17 @@
         </nav>
       </div>
     </header>
+    <hr class="mx-auto max-w-[85%] max-lg:hidden" />
     <main class="mx-auto grid-cols-2 gap-8 lg:mt-16 lg:grid lg:max-w-[80%]">
-      <div class="galleryDesktop flex flex-col gap-4 max-lg:hidden">
-        <img src="./images/image-product-1.jpg" alt="" class="rounded-lg" />
-        <form novalidate class="flex gap-4">
+      <div class="galleryDesktop flex flex-col gap-8 max-lg:hidden">
+        <img
+          src="./images/image-product-1.jpg"
+          alt=""
+          class="h-[60vh] rounded-lg object-cover"
+        />
+        <form novalidate class="flex w-full gap-4">
           <div
-            class="first relative h-24 w-24 rounded-lg border-2 border-transparent has-[:checked]:border-orange"
+            class="first relative rounded-lg border-2 border-transparent has-[:checked]:border-orange"
           >
             <img
               src="./images/image-product-1-thumbnail.jpg"
@@ -85,7 +90,7 @@
             />
           </div>
           <div
-            class="second relative h-24 w-24 rounded-lg border-2 border-transparent has-[:checked]:border-orange"
+            class="second relative rounded-lg border-2 border-transparent has-[:checked]:border-orange"
           >
             <img
               src="./images/image-product-2-thumbnail.jpg"
@@ -99,7 +104,7 @@
             />
           </div>
           <div
-            class="third relative h-24 w-24 rounded-lg border-2 border-transparent has-[:checked]:border-orange"
+            class="third relative rounded-lg border-2 border-transparent has-[:checked]:border-orange"
           >
             <img
               src="./images/image-product-3-thumbnail.jpg"
@@ -113,7 +118,7 @@
             />
           </div>
           <div
-            class="fourth relative h-24 w-24 rounded-lg border-2 border-transparent has-[:checked]:border-orange"
+            class="fourth relative rounded-lg border-2 border-transparent has-[:checked]:border-orange"
           >
             <img
               src="./images/image-product-4-thumbnail.jpg"
@@ -143,7 +148,9 @@
           <img src="images/icon-next.svg" alt="Next" />
         </button>
       </div>
-      <section class="description mx-auto mb-8 mt-4 grid max-w-[90%] gap-4">
+      <section
+        class="description mx-auto mb-8 mt-4 grid max-w-[90%] gap-4 lg:mt-24 lg:h-min lg:gap-8 lg:*:h-min"
+      >
         <p
           class="text-sm font-semibold uppercase tracking-wider text-darkGrayshBlue"
         >
@@ -155,7 +162,9 @@
           Featuring a durable rubber outer sole, they'll withstand everything
           the weather can offer.
         </p>
-        <div class="price flex items-center justify-between">
+        <div
+          class="price flex items-center justify-between lg:flex-col lg:items-start lg:gap-3"
+        >
           <div class="newPrice flex items-center gap-4">
             <p class="text-2xl font-bold">$125.00</p>
             <p
@@ -168,9 +177,9 @@
             <p class="text-sm text-darkGrayshBlue line-through">$250.00</p>
           </div>
         </div>
-        <div class="cartButtons">
+        <div class="cartButtons lg:flex lg:gap-4">
           <div
-            class="quantity flex items-center rounded-md bg-lightGrayshBlue p-4"
+            class="quantity flex items-center rounded-md bg-lightGrayshBlue p-4 lg:flex-1"
           >
             <button aria-label="Minus">
               <img src="./images/icon-minus.svg" alt="Minus" />
@@ -181,7 +190,7 @@
             </button>
           </div>
           <button
-            class="addToCart mt-4 flex w-full items-center justify-center gap-4 rounded-md bg-orange p-3 text-sm font-semibold shadow-lg shadow-paleOrange"
+            class="addToCart mt-4 flex w-full items-center justify-center gap-4 rounded-md bg-orange p-3 text-sm font-semibold shadow-lg shadow-paleOrange lg:m-0 lg:flex-[2]"
           >
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
               <path
