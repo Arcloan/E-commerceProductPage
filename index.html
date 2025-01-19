@@ -39,8 +39,15 @@
         </nav>
       </div>
       <div class="flex items-center justify-end gap-4 lg:gap-8">
-        <button aria-label="Cart">
+        <button aria-label="Cart" class="relative">
           <img src="images/icon-cart.svg" alt="Cart" />
+          <div class="hidden flex-col gap-4 cart absolute top-12 -left-12 -translate-x-[50%] shadow-2xl w-[340px] h-[260px] bg-white rounded-md p-6 z-[1] lg:data-[expanded]:flex">
+          <h2 class="font-semibold self-start">Cart</h2>
+          <hr>
+          <div class="cartContent grid h-full w-full place-content-center">
+            <p class="font-semibold text-darkGrayshBlue">Your cart is empty</p>
+          </div>
+        </div>
         </button>
         <img
           src="images/image-avatar.png"
@@ -142,6 +149,13 @@
       </div>
       <div class="galleryMobile relative lg:hidden">
         <img src="images/image-product-1.jpg" alt="A beatiful pair of shoes" class="productImage"/>
+        <div class="cart hidden flex-col gap-4 absolute inset-0 top-4 max-w-[95%] bottom-8 bg-white mx-auto rounded-md p-6 z-[1] data-[expanded]:flex">
+          <h2 class="font-semibold">Cart</h2>
+          <hr>
+          <div class="cartContent grid h-full w-full place-content-center">
+            <p class="font-semibold text-darkGrayshBlue">Your cart is empty</p>
+          </div>
+        </div>
         <button
           aria-label="Previous"
           class="prev absolute left-4 top-[50%] grid -translate-y-[50%] place-content-center rounded-[50%] bg-white p-3"
