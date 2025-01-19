@@ -67,12 +67,13 @@
       </div>
     </header>
     <hr class="mx-auto max-w-[85%] max-lg:hidden" />
+
     <main class="mx-auto grid-cols-2 gap-8 lg:mt-16 lg:grid lg:max-w-[80%]">
       <div class="galleryDesktop flex flex-col gap-8 max-lg:hidden">
         <img
           src="./images/image-product-1.jpg"
           alt=""
-          class="h-[60vh] rounded-lg object-cover"
+          class="lightboxToggle h-[60vh] rounded-lg object-cover"
         />
         <form novalidate class="flex w-full gap-4">
           <div
@@ -86,7 +87,7 @@
             <input
               type="radio"
               name="shoes"
-              class="peer absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
           <div
@@ -100,7 +101,7 @@
             <input
               type="radio"
               name="shoes"
-              class="peer absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
           <div
@@ -114,7 +115,7 @@
             <input
               type="radio"
               name="shoes"
-              class="peer absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
           <div
@@ -128,7 +129,7 @@
             <input
               type="radio"
               name="shoes"
-              class="peer absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
         </form>
@@ -204,5 +205,85 @@
         </div>
       </section>
     </main>
+    <dialog class="backdrop:bg-black/50 max-w-[30%] mx-auto flex-col gap-4 open:flex open:fixed inset-0 bg-transparent" open>
+        <form method="dialog">
+        <button aria-label="Close" class="grid w-full"><img src="./images/icon-close.svg" alt="Close lightbox" class="w-4 h-4 justify-self-end"></button>
+        </form>
+        <div class="shoesImage flex flex-col gap-8 relative">
+          <img
+          src="./images/image-product-1.jpg"
+          alt=""
+          class="lightboxToggle h-[65vh] rounded-lg object-cover w-full"
+        />
+        <button
+          aria-label="Previous"
+          class="prev absolute -left-4 top-[40%] grid -translate-y-[50%] place-content-center rounded-[50%] bg-white p-3"
+        >
+          <img src="images/icon-previous.svg" alt="Previous" />
+        </button>
+        <button
+          aria-label="Next"
+          class="next absolute -right-4 top-[40%] grid -translate-y-[50%] place-content-center rounded-[50%] bg-white p-3"
+        >
+          <img src="images/icon-next.svg" alt="Next" />
+        </button>
+        <form novalidate class="flex w-[90%] gap-4 mx-auto">
+          <div
+            class="first relative rounded-lg border-2 border-transparent has-[:checked]:border-orange"
+          >
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              class="rounded-md"
+              alt=""
+            />
+            <input
+              type="radio"
+              name="shoesLightbox"
+              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+            />
+          </div>
+          <div
+            class="second relative rounded-lg border-2 border-transparent has-[:checked]:border-orange"
+          >
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              class="rounded-md"
+              alt=""
+            />
+            <input
+              type="radio"
+              name="shoesLightbox"
+              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+            />
+          </div>
+          <div
+            class="third relative rounded-lg border-2 border-transparent has-[:checked]:border-orange"
+          >
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              class="rounded-md"
+              alt=""
+            />
+            <input
+              type="radio"
+              name="shoesLightbox"
+              class=" absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+            />
+        </div>
+        <div
+            class="fourth relative rounded-lg border-2 border-transparent has-[:checked]:border-orange"
+          >
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              class="rounded-md"
+              alt=""
+            />
+            <input
+              type="radio"
+              name="shoesLightbox"
+              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+            />
+          </div>
+      </dialog>
   </body>
 </html>
