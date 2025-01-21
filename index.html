@@ -30,17 +30,18 @@
         <img src="images/logo.svg" alt="" class="mb-1" />
         <nav class="flex gap-6 max-lg:hidden">
           <ul class="contents">
-            <li><a href="#">Collctions</a></li>
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="relative group"><div class="absolute h-1 w-full top-[3.8rem] hidden group-hover:block bg-orange"></div><a href="#">Collctions</a></li>
+            <li class="relative group"><div class="absolute h-1 w-full top-[3.8rem] hidden group-hover:block bg-orange"></div><a href="#">Men</a></li>
+            <li class="relative group"><div class="absolute h-1 w-full top-[3.8rem] hidden group-hover:block bg-orange"></div><a href="#">Women</a></li>
+            <li class="relative group"><div class="absolute h-1 w-full top-[3.8rem] hidden group-hover:block bg-orange"></div><a href="#">About</a></li>
+            <li class="relative group"><div class="absolute h-1 w-full top-[3.8rem] hidden group-hover:block bg-orange"></div><a href="#">Contact</a></li>
           </ul>
         </nav>
       </div>
       <div class="flex items-center justify-end gap-4 lg:gap-8 cursor-pointer">
         <div tabindex="0" aria-label="Cart" class="relative cartToggle">
           <img src="images/icon-cart.svg" alt="Cart" />
+          <div class="quantityInCart text-[0.6rem] bg-orange absolute px-[0.4rem] rounded-full text-white -top-2 -right-1"></div>
           <div class="hidden cursor-auto flex-col gap-4 cart absolute top-12 -left-12 -translate-x-[50%] shadow-2xl w-[340px] h-[260px] bg-white rounded-md p-6 z-[1] lg:data-[expanded]:flex">
           <h2 class="font-semibold self-start">Cart</h2>
           <hr>
@@ -58,7 +59,7 @@
         <img
           src="images/image-avatar.png"
           alt=""
-          class="h-10 w-10 max-lg:h-6 max-lg:w-6"
+          class="h-10 w-10 max-lg:h-6 max-lg:w-6 border-2 rounded-[50%] border-transparent hover:border-orange"
         />
       </div>
       <div
@@ -88,7 +89,7 @@
           tabindex="0"
           src="./images/image-product-1.jpg"
           alt=""
-          class="lightboxToggle h-[60vh] rounded-lg object-cover"
+          class="lightboxToggle cursor-pointer h-[60vh] rounded-lg object-cover"
         />
         <form novalidate class="flex w-full gap-4">
           <div
@@ -104,7 +105,7 @@
               type="radio"
               name="shoes"
               checked
-              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white hover:bg-white hover:opacity-70 checked:opacity-70"
             />
           </div>
           <div
@@ -119,7 +120,7 @@
             <input
               type="radio"
               name="shoes"
-              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute hover:bg-white hover:opacity-70 inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
           <div
@@ -134,7 +135,7 @@
             <input
               type="radio"
               name="shoes"
-              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute hover:bg-white hover:opacity-70 inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
           <div
@@ -149,7 +150,7 @@
             <input
               type="radio"
               name="shoes"
-              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute hover:bg-white hover:opacity-70 inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
         </form>
@@ -173,13 +174,13 @@
           aria-label="Previous"
           class="prev absolute left-4 top-[50%] grid -translate-y-[50%] place-content-center rounded-[50%] bg-white p-3"
         >
-          <img src="images/icon-previous.svg" alt="Previous" />
+          <svg width="12" class="stroke-black group-hover:stroke-orange" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8"  stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
         </button>
         <button
           aria-label="Next"
           class="next absolute right-4 top-[50%] grid -translate-y-[50%] place-content-center rounded-[50%] bg-white p-3"
         >
-          <img src="images/icon-next.svg" alt="Next" />
+          <svg width="13" class="stroke-black group-hover:stroke-orange" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
         </button>
       </div>
       <section
@@ -216,15 +217,15 @@
             class="quantity flex items-center rounded-md bg-lightGrayshBlue p-4 lg:flex-1"
           >
             <button aria-label="Minus" class="Minus">
-              <img src="./images/icon-minus.svg" alt="Minus" />
+              <img src="./images/icon-minus.svg" class="hover:cursor-pointer" alt="Minus" />
             </button>
             <span class="currentQuantityToAdd mx-auto font-semibold">0</span>
             <button aria-label="Plus" class="Plus">
-              <img src="./images/icon-plus.svg" alt="Plus" />
+              <img src="./images/icon-plus.svg" class="hover:cursor-pointer" alt="Plus" />
             </button>
           </div>
           <button
-            class="addToCart mt-4 flex w-full items-center justify-center gap-4 rounded-md bg-orange p-3 text-sm font-semibold shadow-lg shadow-paleOrange lg:m-0 lg:flex-[2]"
+            class="addToCart mt-4 flex w-full items-center justify-center gap-4 rounded-md bg-orange p-3 text-sm font-semibold shadow-lg shadow-paleOrange lg:m-0 lg:flex-[2] hover:opacity-70"
           >
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -240,7 +241,7 @@
     </main>
     <dialog class="backdrop:bg-black/50 max-w-[30%] mx-auto flex-col gap-4 open:flex open:fixed inset-0 bg-transparent overflow-visible">
         <form method="dialog">
-        <button aria-label="Close" class="grid w-full justify-end"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#FFFFFF" fill-rule="evenodd"/></svg></button>
+        <button aria-label="Close" class="grid w-full justify-end"><svg width="14" class="hover:fill-orange fill-slate-50" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"  fill-rule="evenodd"/></svg></button>
         </form>
         <div class="shoesImage flex flex-col gap-8 relative">
           <img
@@ -251,15 +252,15 @@
         <button
           
           aria-label="Previous"
-          class="prev absolute -left-4 top-[40%] grid -translate-y-[50%] place-content-center rounded-[50%] bg-white p-3"
+          class="prev group absolute -left-4 top-[40%] grid -translate-y-[50%] place-content-center rounded-[50%] bg-white p-3"
         >
-          <img src="images/icon-previous.svg" alt="Previous" />
+          <svg width="12" class="stroke-black group-hover:stroke-orange" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8"  stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
         </button>
         <button
           aria-label="Next"
-          class="next absolute -right-4 top-[40%] grid -translate-y-[50%] place-content-center rounded-[50%] bg-white p-3"
+          class="next group absolute -right-4 top-[40%] grid -translate-y-[50%] place-content-center rounded-[50%] bg-white p-3"
         >
-          <img src="images/icon-next.svg" alt="Next" />
+          <svg width="13" class="stroke-black group-hover:stroke-orange" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
         </button>
         <form novalidate class="flex w-[90%] gap-4 mx-auto">
           <div
@@ -275,7 +276,7 @@
               checked
               type="radio"
               name="shoesLightbox"
-              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute hover:bg-white hover:opacity-70 inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
           <div
@@ -290,7 +291,7 @@
             <input
               type="radio"
               name="shoesLightbox"
-              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute hover:bg-white hover:opacity-70 inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
           <div
@@ -305,7 +306,7 @@
             <input
               type="radio"
               name="shoesLightbox"
-              class=" absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class=" absolute hover:bg-white hover:opacity-70 inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
         </div>
         <div
@@ -320,7 +321,7 @@
             <input
               type="radio"
               name="shoesLightbox"
-              class="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
+              class="absolute hover:bg-white hover:opacity-70 inset-0 h-full w-full cursor-pointer appearance-none rounded-lg opacity-0 checked:bg-white checked:opacity-70"
             />
           </div>
       </dialog>

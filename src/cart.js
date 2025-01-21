@@ -4,6 +4,7 @@ const cartContent = document.querySelectorAll(".cartContent");
 const quantityAdded = document.querySelectorAll(".quantityAdded");
 const totalCost = document.querySelectorAll(".totalCost");
 const deleteCart = document.querySelectorAll(".deleteCart");
+const quantityInCart = document.querySelector(".quantityInCart");
 
 deleteCart.forEach(trash => {
     trash.addEventListener("click", e => {
@@ -14,6 +15,7 @@ deleteCart.forEach(trash => {
 })
 
 function updateQuantity(qt) {
+    quantityInCart.textContent = currentQuantity || "";
     quantityAdded.forEach(el => el.textContent = currentQuantity);
     totalCost.forEach(el => el.textContent = ` ${currentQuantity * 125}.00`);
 }
