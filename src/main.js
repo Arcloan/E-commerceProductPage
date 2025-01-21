@@ -12,6 +12,8 @@ document.querySelector(".lightboxToggle").addEventListener("click",e=>{
 
 
 const indexes = {"first": 1, "second": 2, "third": 3, "fourth": 4,};
+const imageUrls = [imgUrl1, imgUrl2, imgUrl3, imgUrl4];
+
 const images = [document.querySelector(".lightbox"), document.querySelector(".lightboxToggle"), document.querySelector(".productImage")];
 const prevButtons = document.querySelectorAll(".prev");
 const nextButtons = document.querySelectorAll(".next");
@@ -27,7 +29,7 @@ prevButtons.forEach(btn => {
     btn.addEventListener("click", e => {
         let selected = images[0].src[Array.from(images[0].src).findLastIndex(ch => !!Number(ch))];
         let newIndex = (Number(selected) - 1) % 4 || 4;
-        let newUrl = window.location.href + `/image-product-${newIndex}.jpg`;
+        let newUrl = imageUrls[newIndex - 1];
         images.forEach(img => img.src = newUrl);
         switchChecked(newIndex);
     });
@@ -37,7 +39,7 @@ nextButtons.forEach(btn => {
     btn.addEventListener("click", e => {
         let selected = images[0].src[Array.from(images[0].src).findLastIndex(ch => !!Number(ch))];
         let newIndex = (Number(selected) + 1) % 4 || 4;
-        let newUrl = window-location.href + `/image-product-${newIndex}.jpg`;
+        let newUrl = imageUrls[newIndex - 1];
         images.forEach(img => img.src = newUrl);
         switchChecked(newIndex);
     })
@@ -45,12 +47,14 @@ nextButtons.forEach(btn => {
 
 document.addEventListener("click", e => {
     if (e.target.tagName === "INPUT") {
-        let selected = indexes[e.target.closest("div").dataset.position];
-        let newUrl = window.location.href + `/image-product-${selected}.jpg`;
+        let selected = Number(indexes[e.target.closest("div").dataset.position]);
+        let newUrl = imageUrls[selected - 1];
         images.forEach(img => img.src = newUrl);
         switchChecked(selected);
     }
 })
 
-console.log(window.location.href);
-console.log("/");
+import imgUrl1 from "../images/image-product-1.jpg";
+import imgUrl2 from "../images/image-product-2.jpg";
+import imgUrl3 from "../images/image-product-3.jpg";
+import imgUrl4 from "../images/image-product-4.jpg";
