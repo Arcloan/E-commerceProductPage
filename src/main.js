@@ -27,7 +27,7 @@ prevButtons.forEach(btn => {
     btn.addEventListener("click", e => {
         let selected = images[0].src[Array.from(images[0].src).findLastIndex(ch => !!Number(ch))];
         let newIndex = (Number(selected) - 1) % 4 || 4;
-        let newUrl = `/image-product-${newIndex}.jpg`;
+        let newUrl = window.location.href + `/image-product-${newIndex}.jpg`;
         images.forEach(img => img.src = newUrl);
         switchChecked(newIndex);
     });
@@ -37,7 +37,7 @@ nextButtons.forEach(btn => {
     btn.addEventListener("click", e => {
         let selected = images[0].src[Array.from(images[0].src).findLastIndex(ch => !!Number(ch))];
         let newIndex = (Number(selected) + 1) % 4 || 4;
-        let newUrl = `/image-product-${newIndex}.jpg`;
+        let newUrl = window-location.href + `/image-product-${newIndex}.jpg`;
         images.forEach(img => img.src = newUrl);
         switchChecked(newIndex);
     })
@@ -46,7 +46,7 @@ nextButtons.forEach(btn => {
 document.addEventListener("click", e => {
     if (e.target.tagName === "INPUT") {
         let selected = indexes[e.target.closest("div").dataset.position];
-        let newUrl = `/image-product-${selected}.jpg`;
+        let newUrl = window.location.href + `/image-product-${selected}.jpg`;
         images.forEach(img => img.src = newUrl);
         switchChecked(selected);
     }
