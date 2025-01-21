@@ -51,3 +51,6 @@ document.addEventListener("click", e => {
         switchChecked(selected);
     }
 })
+
+console.log(window.location.href);
+console.log("/");
